@@ -1,0 +1,12 @@
+.conteiner{
+    background-color: red;
+    width: 950px;
+    height: 950px;
+}
+
+@media only screen and (min-width: 760px) {
+    .conteiner{
+        background-color: #0000ff;
+    } 
+    
+}
