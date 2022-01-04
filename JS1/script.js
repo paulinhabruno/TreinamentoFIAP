@@ -2,7 +2,7 @@ const inputCpf = document.querySelector("#inputCpf");
 
 const handeCpfInput = (event) => {
 
-    alert(validaCpf(event.target.value));
+    alert(mascaraCpf(event.target.value));
 
 }
 
