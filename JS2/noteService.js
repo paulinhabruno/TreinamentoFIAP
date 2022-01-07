@@ -1,14 +1,14 @@
-
+import { formatDate } from "./utils.js";
 
 const sectionListNotes = document.querySelector("#list-notes");
 const KEY_STORAGE = "@NotesAvanade";
 
 let listNotes = [];
 
-const saveNotesToStorage = () =>
+export const saveNotesToStorage = () =>
 localStorage.setItem(KEY_STORAGE, JSON.stringify(listNotes));
 
-const loadNotesFromStorage = () => {
+export const loadNotesFromStorage = () => {
 const listStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
 
 listNotes = listStorage || [];
@@ -44,16 +44,13 @@ const createNewNoteElement = ({id, date, text}) => { //desestruturação de obje
   }
 
 
-
-
-  const addNoteToList = (newNote) => {
+  export const addNoteToList = (newNote) => {
     const newNoteElement = createNewNoteElement(newNote);
   
     sectionListNotes.appendChild(newNoteElement);
 
     listNotes.push(newNote);
   }
-
 
 
   const removeNote = (event, idnoteToRemove) => {

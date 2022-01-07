@@ -1,7 +1,8 @@
-/**
- * Vamos estruturar as nossas notas
- * Daqui pra frente terão id e a data de inclusão
- */
+import {
+  saveNotesToStorage,
+  loadNotesFromStorage,
+  addNoteToList} 
+  from "./noteService.js";
 
 const form = document.querySelector("#form-notes");
 const inputCpf = document.querySelector("#input-cpf");
@@ -9,8 +10,6 @@ const inputCpf = document.querySelector("#input-cpf");
 window.addEventListener("unload", saveNotesToStorage);
 
 window.addEventListener("load", loadNotesFromStorage);
-
-const formatDate = (date) => Intl.DateTimeFormat(navigator.language, {dateStyle: "short", timeStyle: "short"}).format(date); // a data foi formatada para o formato local do navegador
 
 const cleanForm = () => form.reset();
 
