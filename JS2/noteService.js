@@ -9,12 +9,11 @@ export const saveNotesToStorage = () =>
 localStorage.setItem(KEY_STORAGE, JSON.stringify(listNotes));
 
 export const loadNotesFromStorage = () => {
-const listStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
+const listStorage = JSON.parse(localStorage.getItem(KEY_STORAGE)) || [];
 
-listNotes = listStorage || [];
 
 //convertendo a data string para o formato Date()
-listNotes.forEach(note => {
+listStorage.forEach(note => {
   note.date = new Date (note.date);
   addNoteToList(note);
 });
